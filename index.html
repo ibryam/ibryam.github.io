@@ -12,165 +12,171 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<style>
-    .item p { font-size: 14px; color: #666; line-height: 1.5; }
-    .item h3 { color: #2c3e50; }
-    .item:hover { transform: scale(1.05); transition: transform 0.3s; }
-</style>
+			/* Base styles for all devices */
+			.item p { font-size: 14px; color: #666; line-height: 1.5; }
+			.item h3 { color: #2c3e50; }
+			.item:hover { transform: scale(1.05); transition: transform 0.3s; }
+			#portfolio { background-color: #f9f9f9; padding: 40px 0; }
+
+			/* Tablet (max-width: 768px) */
+			@media screen and (max-width: 768px) {
+				.row > .col-4 { width: 50%; float: left; margin-bottom: 20px; }
+				.item img { max-width: 100%; height: auto; }
+				#header { padding: 20px; }
+				#logo img { max-width: 80px; }
+				#title { font-size: 1.5em; }
+				#nav ul { text-align: center; }
+				#nav li { margin: 10px 0; }
+			}
+
+			/* Phone (max-width: 480px) */
+			@media screen and (max-width: 480px) {
+				.row > .col-4 { width: 100%; margin-bottom: 20px; }
+				.item p { font-size: 12px; }
+				.item h3 { font-size: 1.2em; }
+				.icons a { font-size: 1em; margin: 0 8px; }
+				#top h2 { font-size: 1.5em; }
+				#top p { font-size: 0.9em; }
+				.button { padding: 10px 20px; }
+			}
+		</style>
 	</head>
 	<body class="is-preload">
 
 		<!-- Header -->
-			<div id="header">
-
-				<div class="top">
-
-					<!-- Logo -->
-						<div id="logo">
-							<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-							<h1 id="title">Ibryam Faik</h1>
-							<p>Data Analyst</p>
-						</div>
-
-					<!-- Nav -->
-						<nav id="nav">
-							<ul>
-								<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-								<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
-								<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
-								<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
-							</ul>
-						</nav>
-
+		<div id="header">
+			<div class="top">
+				<div id="logo">
+					<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+					<h1 id="title">Ibryam Faik</h1>
+					<p>Data Analyst</p>
 				</div>
-
-				<div class="bottom">
-
-					<!-- Social Icons -->
-<ul class="icons">
-    <li><a href="https://x.com/ibryam_" class="icon brands fa-x-twitter"><span class="label">Twitter</span></a></li>
-    <li><a href="https://public.tableau.com/app/profile/ibryam" class="icon solid fa-chart-bar"><span class="label">Facebook</span></a></li>
-    <li><a href="https://github.com/ibryam" class="icon brands fa-github"><span class="label">Github</span></a></li>
-    <li><a href="https://linkedin.com/in/ibryam" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-    <li><a href="mailto:ibryamfibryam@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-</ul>
-
-				</div>
-
+				<nav id="nav">
+					<ul>
+						<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+						<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
+						<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+						<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
+					</ul>
+				</nav>
 			</div>
+			<div class="bottom">
+				<ul class="icons">
+					<li><a href="https://x.com/ibryam_" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
+					<li><a href="https://public.tableau.com/app/profile/ibryam" class="icon solid fa-chart-bar"><span class="label">Tableau Public</span></a></li>
+					<li><a href="https://github.com/ibryam" class="icon brands fa-github"><span class="label">Github</span></a></li>
+					<li><a href="https://linkedin.com/in/ibryam" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+					<li><a href="mailto:ibryamfibryam@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+				</ul>
+			</div>
+		</div>
 
 		<!-- Main -->
-			<div id="main">
+		<div id="main">
+			<!-- Intro -->
+			<section id="top" class="one dark cover">
+				<div class="container">
+					<header>
+						<h2 class="alt">Hi! I'm <strong>Ibryam Faik</strong>, a Data Analyst<br />
+						turning data into stories.</h2>
+						<p>Explore my work below and let’s connect!</p>
+					</header>
+					<footer>
+						<a href="#portfolio" class="button scrolly">View My Projects</a>
+					</footer>
+				</div>
+			</section>
 
-				<!-- Intro -->
-<section id="top" class="one dark cover">
-    <div class="container">
-        <header>
-            <h2 class="alt">Hi! I'm <strong>Ibryam Faik</strong>, a Data Analyst<br />
-            turning data into stories.</h2>
-            <p>Explore my work below and let’s connect!</p>
-        </header>
-        <footer>
-            <a href="#portfolio" class="button scrolly">View My Projects</a>
-        </footer>
-    </div>
-</section>
+			<!-- Portfolio -->
+			<section id="portfolio" class="two">
+				<div class="container">
+					<header>
+						<h2>Portfolio</h2>
+					</header>
+					<p>Here are some of my data analysis projects showcasing my skills in Python, SQL, and data visualization.</p>
+					<div class="row">
+						<div class="col-4 col-12-mobile">
+							<article class="item">
+								<a href="https://github.com/ibryam" class="image fit"><img src="images/project1-screenshot.jpg" alt="Project 1 Screenshot" /></a>
+								<header>
+									<h3>Data Cleaning Pipeline</h3>
+								</header>
+								<p>Built a Python script to clean and preprocess messy datasets, reducing processing time by 30%.</p>
+							</article>
+						</div>
+						<div class="col-4 col-12-mobile">
+							<article class="item">
+								<a href="https://github.com/ibryam" class="image fit"><img src="images/project2-screenshot.jpg" alt="Project 2 Screenshot" /></a>
+								<header>
+									<h3>Sales Dashboard</h3>
+								</header>
+								<p>Created an interactive Tableau dashboard to visualize sales trends for a retail client.</p>
+							</article>
+						</div>
+						<div class="col-4 col-12-mobile">
+							<article class="item">
+								<a href="https://github.com/ibryam/west-ham-united-betting-model" class="image fit"><img src="images/west-ham-screenshot.jpg" alt="Project 3 Screenshot" /></a>
+								<header>
+									<h3>West Ham Predicting Model</h3>
+								</header>
+								<p>The model is trained with 2023 matches of the team and it has 89% accuracy rate.</p>
+							</article>
+						</div>
+						<div class="col-4 col-12-mobile">
+							<article class="item">
+								<a href="https://github.com/ibryam" class="image fit"><img src="images/project3-screenshot.jpg" alt="Project 4 Screenshot" /></a>
+								<header>
+									<h3>Predictive Model</h3>
+								</header>
+								<p>Developed a machine learning model in Python to forecast customer churn with 85% accuracy.</p>
+							</article>
+						</div>
+					</div>
+				</div>
+			</section>
 
-				<!-- Portfolio -->
-					<section id="portfolio" class="two"style="background-color: #f9f9f9; padding: 40px 0;">
-    <div class="container">
-        <header>
-            <h2>Portfolio</h2>
-        </header>
-        <p>Here are some of my data analysis projects showcasing my skills in Python, SQL, and data visualization.</p>
-        <div class="row">
-            <!-- Project 1 -->
-            <div class="col-4 col-12-mobile">
-                <article class="item">
-                    <a href="https://github.com/yourusername/project1" class="image fit"><img src="images/project1-screenshot.jpg" alt="Project 1 Screenshot" /></a>
-                    <header>
-                        <h3>Data Cleaning Pipeline</h3>
-                    </header>
-                    <p>Built a Python script to clean and preprocess messy datasets, reducing processing time by 30%.</p>
-                </article>
-            </div>
-            <!-- Project 2 -->
-            <div class="col-4 col-12-mobile">
-                <article class="item">
-                    <a href="https://github.com/yourusername/project2" class="image fit"><img src="images/project2-screenshot.jpg" alt="Project 2 Screenshot" /></a>
-                    <header>
-                        <h3>Sales Dashboard</h3>
-                    </header>
-                    <p>Created an interactive Tableau dashboard to visualize sales trends for a retail client.</p>
-                </article>
-            </div>
-		            <!-- Project 3 -->
-            <div class="col-4 col-12-mobile">
-                <article class="item">
-                    <a href="https://github.com/ibryam/west-ham-united-betting-model" class="image fit"><img src="images/west-ham-screenshot.jpg" alt="Project 3 Screenshot" /></a>
-                    <header>
-                        <h3>West Ham Predicting Model</h3>
-                    </header>
-                    <p>The model is trained with 2023 matches of the team and it has 89% accuracy rate.</p>
-                </article>
-            </div>
-            <!-- Project 4 -->
-            <div class="col-4 col-12-mobile">
-                <article class="item">
-                    <a href="https://github.com/yourusername/project3" class="image fit"><img src="images/project3-screenshot.jpg" alt="Project 4 Screenshot" /></a>
-                    <header>
-                        <h3>Predictive Model</h3>
-                    </header>
-                    <p>Developed a machine learning model in Python to forecast customer churn with 85% accuracy.</p>
-                </article>
-            </div>
-        </div>
-    </div>
-</section>
+			<!-- About Me -->
+			<section id="about" class="three">
+				<div class="container">
+					<header>
+						<h2>About Me</h2>
+					</header>
+					<a href="#" class="image featured"><img src="images/ibryam-photo.jpg" alt="Ibryam Faik" /></a>
+					<p>Hi, I’m Ibryam Faik, a passionate Data Analyst with expertise in Python, SQL, and data visualization. I love turning raw data into actionable insights and have worked on projects ranging from predictive modeling to interactive dashboards. When I’m not crunching numbers, you’ll find me exploring new datasets or refining my coding skills.</p>
+				</div>
+			</section>
 
-				<!-- About Me -->
-					<section id="about" class="three">
-    <div class="container">
-        <header>
-            <h2>About Me</h2>
-        </header>
-        <a href="#" class="image featured"><img src="images/ibryam-photo.jpg" alt="Ibryam Faik" /></a>
-        <p>Hi, I’m Ibryam Faik, a passionate Data Analyst with expertise in Python, SQL, and data visualization. I love turning raw data into actionable insights and have worked on projects ranging from predictive modeling to interactive dashboards. When I’m not crunching numbers, you’ll find me exploring new datasets or refining my coding skills.</p>
-    </div>
-</section>
-
-				<!-- Contact -->
-					<section id="contact" class="four">
-    <div class="container">
-        <header>
-            <h2>Contact</h2>
-        </header>
-        <p>Feel free to reach out for collaboration, job opportunities, or just to chat about data!</p>
-        <ul>
-            <li>Email: <a href="mailto:ibryamfibryam@gmail.com">ibryamfibryam@gmail.com</a></li>
-            <li>LinkedIn: <a href="https://linkedin.com/in/ibryam">linkedin.com/in/ibryam</a></li>
-            <li>GitHub: <a href="https://github.com/ibryam">github.com/ibryam</a></li>
-        </ul>
-    </div>
-</section>
+			<!-- Contact -->
+			<section id="contact" class="four">
+				<div class="container">
+					<header>
+						<h2>Contact</h2>
+					</header>
+					<p>Feel free to reach out for collaboration, job opportunities, or just to chat about data!</p>
+					<ul>
+						<li>Email: <a href="mailto:ibryamfibryam@gmail.com">ibryamfibryam@gmail.com</a></li>
+						<li>LinkedIn: <a href="https://linkedin.com/in/ibryam">linkedin.com/in/ibryam</a></li>
+						<li>GitHub: <a href="https://github.com/ibryam">github.com/ibryam</a></li>
+					</ul>
+				</div>
+			</section>
+		</div>
 
 		<!-- Footer -->
-			<div id="footer">
-
-				<!-- Copyright -->
-					<ul class="copyright">
-						<li>&copy; Ibryam Faik - All rights reserved.</li><li>Phone: +359 8777 63362</li>
-					</ul>
-
-			</div>
+		<div id="footer">
+			<ul class="copyright">
+				<li>© Ibryam Faik - All rights reserved.</li><li>Phone: +359 8777 63362</li>
+			</ul>
+		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrolly.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
 	</body>
 </html>
