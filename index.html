@@ -13,31 +13,72 @@
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 		<style>
 			/* Base styles for all devices */
-			.item p { font-size: 14px; color: #666; line-height: 1.5; }
-			.item h3 { color: #2c3e50; }
-			.item:hover { transform: scale(1.05); transition: transform 0.3s; }
-			#portfolio { background-color: #f9f9f9; padding: 40px 0; }
-
-			/* Tablet (max-width: 768px) */
-			@media screen and (max-width: 768px) {
-				.row > .col-4 { width: 50%; float: left; margin-bottom: 20px; }
-				.item img { max-width: 100%; height: auto; }
-				#header { padding: 20px; }
-				#logo img { max-width: 80px; }
-				#title { font-size: 1.5em; }
-				#nav ul { text-align: center; }
-				#nav li { margin: 10px 0; }
+			#portfolio { 
+				background-color: #f9f9f9; 
+				padding: 4rem 0; 
+			}
+			.item { 
+				text-align: center; 
+				margin-bottom: 2rem; 
+				background: #fff; 
+				border-radius: 8px; 
+				box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+				padding: 1rem; 
+				transition: transform 0.3s ease; 
+			}
+			.item:hover { 
+				transform: translateY(-5px); 
+			}
+			.item h3 { 
+				color: #2c3e50; 
+				font-size: 1.25rem; 
+				margin: 0.5rem 0; 
+				line-height: 1.2; 
+			}
+			.item p { 
+				color: #666; 
+				font-size: 0.9rem; 
+				line-height: 1.5; 
+				margin: 0; 
+				padding: 0 0.5rem 0.5rem; 
+			}
+			.item .image img { 
+				border-radius: 4px; 
+				max-height: 200px; 
+				object-fit: cover; 
 			}
 
-			/* Phone (max-width: 480px) */
+			/* Desktop: 3 items per row */
+			@media screen and (min-width: 769px) {
+				.row > .col-4 { 
+					width: 33.33333%; 
+					float: left; 
+					padding: 0 1rem; 
+				}
+			}
+
+			/* Tablet: 2 items per row */
+			@media screen and (max-width: 768px) {
+				.row > .col-4 { 
+					width: 50%; 
+					float: left; 
+					padding: 0 0.75rem; 
+					margin-bottom: 1.5rem; 
+				}
+				.item h3 { font-size: 1.1rem; }
+				.item p { font-size: 0.85rem; }
+			}
+
+			/* Phone: 1 item per row */
 			@media screen and (max-width: 480px) {
-				.row > .col-4 { width: 100%; margin-bottom: 20px; }
-				.item p { font-size: 12px; }
-				.item h3 { font-size: 1.2em; }
-				.icons a { font-size: 1em; margin: 0 8px; }
-				#top h2 { font-size: 1.5em; }
-				#top p { font-size: 0.9em; }
-				.button { padding: 10px 20px; }
+				.row > .col-4 { 
+					width: 100%; 
+					float: none; 
+					padding: 0 0.5rem; 
+					margin-bottom: 1rem; 
+				}
+				.item h3 { font-size: 1rem; }
+				.item p { font-size: 0.8rem; }
 			}
 		</style>
 	</head>
@@ -94,18 +135,28 @@
 						<h2>Portfolio</h2>
 					</header>
 					<p>Here are some of my data analysis projects showcasing my skills in Python, SQL, and data visualization.</p>
-					<div class="col-4 col-12-mobile">
-    <article class="item">
-        <a href="https://github.com/ibryam/financial-analysis" class="image fit"><img src="images/tableau_viz.png" alt="Financial Analysis" /></a>
-        <header>
-            <h3>Financial Transaction Analysis</h3>
-        </header>
-        <p>Summarized spending by category and flagged fraud in ~1.3M transactions using SQL, Python, and Tableau.</p>
-    </article>
-</div>
+					<div class="row">
 						<div class="col-4 col-12-mobile">
 							<article class="item">
-								<a href="https://github.com/ibryam" class="image fit"><img src="images/project2-screenshot.jpg" alt="Project 2 Screenshot" /></a>
+								<a href="https://github.com/ibryam/west-ham-united-betting-model" class="image fit"><img src="images/west-ham-screenshot.jpg" alt="West Ham Predicting Model" /></a>
+								<header>
+									<h3>West Ham Predicting Model</h3>
+								</header>
+								<p>The model is trained with 2023 matches of the team and has an 89% accuracy rate.</p>
+							</article>
+						</div>
+						<div class="col-4 col-12-mobile">
+							<article class="item">
+								<a href="https://github.com/ibryam/financial-analysis-fraud-detection" class="image fit"><img src="images/tableau_viz.png" alt="Financial Analysis" /></a>
+								<header>
+									<h3>Financial Transaction Analysis</h3>
+								</header>
+								<p>Summarized spending by category and flagged fraud in ~1.3M transactions using SQL, Python, and Tableau.</p>
+							</article>
+						</div>
+						<div class="col-4 col-12-mobile">
+							<article class="item">
+								<a href="https://github.com/ibryam" class="image fit"><img src="images/project2-screenshot.jpg" alt="Sales Dashboard" /></a>
 								<header>
 									<h3>Sales Dashboard</h3>
 								</header>
@@ -114,26 +165,16 @@
 						</div>
 						<div class="col-4 col-12-mobile">
 							<article class="item">
-								<a href="https://github.com/ibryam/west-ham-united-betting-model" class="image fit"><img src="images/west-ham-screenshot.jpg" alt="Project 3 Screenshot" /></a>
-								<header>
-									<h3>West Ham Predicting Model</h3>
-								</header>
-								<p>The model is trained with 2023 matches of the team and it has 89% accuracy rate.</p>
-							</article>
-						</div>
-						<div class="col-4 col-12-mobile">
-							<article class="item">
-								<a href="https://github.com/ibryam" class="image fit"><img src="images/project3-screenshot.jpg" alt="Project 4 Screenshot" /></a>
+								<a href="https://github.com/ibryam" class="image fit"><img src="images/project3-screenshot.jpg" alt="Predictive Model" /></a>
 								<header>
 									<h3>Predictive Model</h3>
 								</header>
 								<p>Developed a machine learning model in Python to forecast customer churn with 85% accuracy.</p>
 							</article>
 						</div>
-											<div class="row">
 						<div class="col-4 col-12-mobile">
 							<article class="item">
-								<a href="https://github.com/ibryam" class="image fit"><img src="images/project1-screenshot.jpg" alt="Project 1 Screenshot" /></a>
+								<a href="https://github.com/ibryam" class="image fit"><img src="images/project1-screenshot.jpg" alt="Data Cleaning Pipeline" /></a>
 								<header>
 									<h3>Data Cleaning Pipeline</h3>
 								</header>
