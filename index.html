@@ -47,6 +47,11 @@
 				max-height: 200px; 
 				object-fit: cover; 
 			}
+			/* Ensure Tableau iframe fits nicely */
+			.tableauPlaceholder {
+				margin: 1rem auto;
+				max-width: 100%;
+			}
 
 			/* Desktop: 3 items per row */
 			@media screen and (min-width: 769px) {
@@ -152,8 +157,46 @@
 									<h3>Financial Transaction Analysis</h3>
 								</header>
 								<p>Summarized spending by category and flagged fraud in ~1.3M transactions using SQL, Python, and Tableau.</p>
+								<!-- Embedded Tableau Dashboard -->
+								<div class='tableauPlaceholder' id='viz1741522480452' style='position: relative'>
+									<noscript>
+										<a href='#'>
+											<img alt='Spending by Category ' src='https://public.tableau.com/static/images/Fi/FinancialTranscationAnalysis-FraudDetectionProject/SepndingbyCategory/1_rss.png' style='border: none' />
+										</a>
+									</noscript>
+									<object class='tableauViz' style='display:none;'>
+										<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+										<param name='embed_code_version' value='3' />
+										<param name='site_root' value='' />
+										<param name='name' value='FinancialTranscationAnalysis-FraudDetectionProject/SepndingbyCategory' />
+										<param name='tabs' value='no' />
+										<param name='toolbar' value='yes' />
+										<param name='static_image' value='https://public.tableau.com/static/images/Fi/FinancialTranscationAnalysis-FraudDetectionProject/SepndingbyCategory/1.png' />
+										<param name='animate_transition' value='yes' />
+										<param name='display_static_image' value='yes' />
+										<param name='display_spinner' value='yes' />
+										<param name='display_overlay' value='yes' />
+										<param name='display_count' value='yes' />
+										<param name='language' value='en-US' />
+									</object>
+								</div>
+								<script type='text/javascript'>
+									var divElement = document.getElementById('viz1741522480452');
+									var vizElement = divElement.getElementsByTagName('object')[0];
+									if ( divElement.offsetWidth > 800 ) { 
+										vizElement.style.width='1000px'; vizElement.style.height='827px';
+									} else if ( divElement.offsetWidth > 500 ) { 
+										vizElement.style.width='1000px'; vizElement.style.height='827px';
+									} else { 
+										vizElement.style.width='100%'; vizElement.style.height='727px';
+									}
+									var scriptElement = document.createElement('script');
+									scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+									vizElement.parentNode.insertBefore(scriptElement, vizElement);
+								</script>
 							</article>
 						</div>
+						<!-- Commented out additional project items -->
 						<!-- <div class="col-4 col-12-mobile">
 							<article class="item">
 								<a href="https://github.com/ibryam" class="image fit"><img src="images/project2-screenshot.jpg" alt="Sales Dashboard" /></a>
@@ -161,24 +204,6 @@
 									<h3>Sales Dashboard</h3>
 								</header>
 								<p>Created an interactive Tableau dashboard to visualize sales trends for a retail client.</p>
-							</article>
-						</div> -->
-					<!--	<div class="col-4 col-12-mobile">
-							<article class="item">
-								<a href="https://github.com/ibryam" class="image fit"><img src="images/project3-screenshot.jpg" alt="Predictive Model" /></a>
-								<header>
-									<h3>Predictive Model</h3>
-								</header>
-								<p>Developed a machine learning model in Python to forecast customer churn with 85% accuracy.</p>
-							</article>
-						</div> -->
-					<!--	<div class="col-4 col-12-mobile">
-							<article class="item">
-								<a href="https://github.com/ibryam" class="image fit"><img src="images/project1-screenshot.jpg" alt="Data Cleaning Pipeline" /></a>
-								<header>
-									<h3>Data Cleaning Pipeline</h3>
-								</header>
-								<p>Built a Python script to clean and preprocess messy datasets, reducing processing time by 30%.</p>
 							</article>
 						</div> -->
 					</div>
