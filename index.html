@@ -46,6 +46,7 @@
 				border-radius: 4px; 
 				max-height: 200px; 
 				object-fit: cover; 
+				width: 100%; /* Ensure image scales with container */
 			}
 			/* Ensure Tableau iframe fits nicely and scales */
 			.tableauPlaceholder {
@@ -53,35 +54,18 @@
 				max-width: 100%;
 			}
 
-			/* Desktop: 3 items per row */
-			@media screen and (min-width: 769px) {
-				.row > .col-4 { 
-					width: 33.33333%; 
-					float: left; 
-					padding: 0 1rem; 
-				}
+			/* Full-width projects for all screen sizes */
+			.row > .col-12 { 
+				width: 100%; 
+				padding: 0 1rem; 
+				margin-bottom: 2rem; 
 			}
-
-			/* Tablet: 2 items per row */
+			/* Adjust font sizes for consistency */
 			@media screen and (max-width: 768px) {
-				.row > .col-4 { 
-					width: 50%; 
-					float: left; 
-					padding: 0 0.75rem; 
-					margin-bottom: 1.5rem; 
-				}
 				.item h3 { font-size: 1.1rem; }
 				.item p { font-size: 0.85rem; }
 			}
-
-			/* Phone: 1 item per row */
 			@media screen and (max-width: 480px) {
-				.row > .col-4 { 
-					width: 100%; 
-					float: none; 
-					padding: 0 0.5rem; 
-					margin-bottom: 1rem; 
-				}
 				.item h3 { font-size: 1rem; }
 				.item p { font-size: 0.8rem; }
 			}
@@ -141,7 +125,7 @@
 					</header>
 					<p>Here are some of my data analysis projects showcasing my skills in Python, SQL, and data visualization.</p>
 					<div class="row">
-						<div class="col-4 col-12-mobile">
+						<div class="col-12">
 							<article class="item">
 								<a href="https://github.com/ibryam/west-ham-united-betting-model" class="image fit"><img src="images/west-ham-screenshot.jpg" alt="West Ham Predicting Model" /></a>
 								<header>
@@ -150,9 +134,9 @@
 								<p>The model is trained with 2023 matches of the team and has an 89% accuracy rate.</p>
 							</article>
 						</div>
-						<div class="col-4 col-12-mobile">
+						<div class="col-12">
 							<article class="item">
-								<!-- Replaced image with Tableau Dashboard -->
+								<!-- Tableau Dashboard -->
 								<div class='tableauPlaceholder' id='viz1741522480452' style='position: relative'>
 									<noscript>
 										<a href='#'>
@@ -179,25 +163,24 @@
 									var divElement = document.getElementById('viz1741522480452');
 									var vizElement = divElement.getElementsByTagName('object')[0];
 									if ( divElement.offsetWidth > 800 ) { 
-										vizElement.style.width='3000px'; vizElement.style.height='2481px'; // 3x original (1000px x 827px)
+										vizElement.style.width='3000px'; vizElement.style.height='2481px'; // 3x original
 									} else if ( divElement.offsetWidth > 500 ) { 
-										vizElement.style.width='3000px'; vizElement.style.height='2481px';
+										vizElement.style.width='2000px'; vizElement.style.height='1654px'; // 2x for mid-size
 									} else { 
-										vizElement.style.width='100%'; vizElement.style.height='2181px'; // 3x original height (727px)
+										vizElement.style.width='100%'; vizElement.style.height='1240px'; // Adjusted for mobile
 									}
 									var scriptElement = document.createElement('script');
 									scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
 									vizElement.parentNode.insertBefore(scriptElement, vizElement);
 								</script>
 								<header>
-									<!-- Clickable title linking to GitHub -->
 									<h3><a href="https://github.com/ibryam/financial-analysis-fraud-detection">Financial Transaction Analysis</a></h3>
 								</header>
 								<p>Summarized spending by category and flagged fraud in ~1.3M transactions using SQL, Python, and Tableau.</p>
 							</article>
 						</div>
 						<!-- Commented out additional project items -->
-						<!-- <div class="col-4 col-12-mobile">
+						<!-- <div class="col-12">
 							<article class="item">
 								<a href="https://github.com/ibryam" class="image fit"><img src="images/project2-screenshot.jpg" alt="Sales Dashboard" /></a>
 								<header>
