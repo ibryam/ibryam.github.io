@@ -46,8 +46,8 @@
 			}
 			.item .image img { 
 				border-radius: 4px; 
-				max-height: 400px; /* Increased from 200px to make it taller */
-				width: 100%; /* Ensure it scales fully within container */
+				max-height: 800px; /* Doubled from 400px for desktop */
+				width: 100%; 
 				object-fit: cover; 
 			}
 			/* Ensure Tableau iframe fits nicely and scales */
@@ -71,12 +71,12 @@
 			@media screen and (max-width: 768px) {
 				.item h3 { font-size: 1.1rem; }
 				.item p { font-size: 0.85rem; }
-				.item .image img { max-height: 300px; } /* Slightly smaller for tablets */
+				.item .image img { max-height: 600px; } /* Doubled from 300px for tablets */
 			}
 			@media screen and (max-width: 480px) {
 				.item h3 { font-size: 1rem; }
 				.item p { font-size: 0.8rem; }
-				.item .image img { max-height: 200px; } /* Smaller for mobile */
+				.item .image img { max-height: 400px; } /* Doubled from 200px for mobile */
 			}
 		</style>
 	</head>
