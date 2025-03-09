@@ -47,7 +47,7 @@
 				max-height: 200px; 
 				object-fit: cover; 
 			}
-			/* Ensure Tableau iframe fits nicely */
+			/* Ensure Tableau iframe fits nicely and scales */
 			.tableauPlaceholder {
 				margin: 1rem auto;
 				max-width: 100%;
@@ -152,12 +152,7 @@
 						</div>
 						<div class="col-4 col-12-mobile">
 							<article class="item">
-								<a href="https://github.com/ibryam/financial-analysis-fraud-detection" class="image fit"><img src="images/tableau_viz.png" alt="Financial Analysis" /></a>
-								<header>
-									<h3>Financial Transaction Analysis</h3>
-								</header>
-								<p>Summarized spending by category and flagged fraud in ~1.3M transactions using SQL, Python, and Tableau.</p>
-								<!-- Embedded Tableau Dashboard -->
+								<!-- Replaced image with Tableau Dashboard -->
 								<div class='tableauPlaceholder' id='viz1741522480452' style='position: relative'>
 									<noscript>
 										<a href='#'>
@@ -184,16 +179,21 @@
 									var divElement = document.getElementById('viz1741522480452');
 									var vizElement = divElement.getElementsByTagName('object')[0];
 									if ( divElement.offsetWidth > 800 ) { 
-										vizElement.style.width='1000px'; vizElement.style.height='827px';
+										vizElement.style.width='3000px'; vizElement.style.height='2481px'; // 3x original (1000px x 827px)
 									} else if ( divElement.offsetWidth > 500 ) { 
-										vizElement.style.width='1000px'; vizElement.style.height='827px';
+										vizElement.style.width='3000px'; vizElement.style.height='2481px';
 									} else { 
-										vizElement.style.width='100%'; vizElement.style.height='727px';
+										vizElement.style.width='100%'; vizElement.style.height='2181px'; // 3x original height (727px)
 									}
 									var scriptElement = document.createElement('script');
 									scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
 									vizElement.parentNode.insertBefore(scriptElement, vizElement);
 								</script>
+								<header>
+									<!-- Clickable title linking to GitHub -->
+									<h3><a href="https://github.com/ibryam/financial-analysis-fraud-detection">Financial Transaction Analysis</a></h3>
+								</header>
+								<p>Summarized spending by category and flagged fraud in ~1.3M transactions using SQL, Python, and Tableau.</p>
 							</article>
 						</div>
 						<!-- Commented out additional project items -->
