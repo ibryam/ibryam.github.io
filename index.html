@@ -46,9 +46,9 @@
 			}
 			.item .image img { 
 				border-radius: 4px; 
-				max-height: 200px; 
+				max-height: 400px; /* Increased from 200px to make it taller */
+				width: 100%; /* Ensure it scales fully within container */
 				object-fit: cover; 
-				width: 100%; 
 			}
 			/* Ensure Tableau iframe fits nicely and scales */
 			.tableauPlaceholder {
@@ -67,14 +67,16 @@
 				padding: 0 1rem; 
 				margin-bottom: 2rem; 
 			}
-			/* Adjust font sizes for consistency */
+			/* Adjust font sizes and image height for smaller screens */
 			@media screen and (max-width: 768px) {
 				.item h3 { font-size: 1.1rem; }
 				.item p { font-size: 0.85rem; }
+				.item .image img { max-height: 300px; } /* Slightly smaller for tablets */
 			}
 			@media screen and (max-width: 480px) {
 				.item h3 { font-size: 1rem; }
 				.item p { font-size: 0.8rem; }
+				.item .image img { max-height: 200px; } /* Smaller for mobile */
 			}
 		</style>
 	</head>
