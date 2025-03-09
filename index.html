@@ -50,18 +50,18 @@
 				width: 100%; 
 				object-fit: cover; 
 			}
-			/* Ensure Tableau iframe fits and scales */
+			/* Tighten Tableau iframe spacing */
 			.tableauPlaceholder {
-				margin: 1rem auto;
+				margin: 0.5rem auto; /* Reduced from 1rem to match West Ham */
 				max-width: 100%;
-				width: 100%; /* Force full width */
-				height: auto; /* Let height adjust to content */
+				width: 100%;
+				height: auto;
 			}
 			/* Specific styling for Financial Transaction item */
 			.item.financial-transaction {
 				display: flex;
 				flex-direction: column;
-				gap: 0.5rem; /* Reduce space between viz and text */
+				gap: 0.25rem; /* Reduced from 0.5rem for tighter spacing */
 				max-height: none; 
 				overflow: hidden; 
 			}
@@ -181,8 +181,8 @@
 										vizElement.style.width='1000px'; vizElement.style.height='827px'; 
 									} else { 
 										vizElement.style.width='100%'; vizElement.style.height='900px'; 
-										vizElement.style.maxWidth='100%'; // Ensure it doesn’t exceed container
-										vizElement.style.maxHeight='900px'; // Cap height to match intent
+										vizElement.style.maxWidth='100%'; 
+										vizElement.style.maxHeight='900px'; 
 									}
 									var scriptElement = document.createElement('script');
 									scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
