@@ -46,7 +46,7 @@
 			}
 			.item .image img { 
 				border-radius: 4px; 
-				max-height: 800px; /* Doubled from 400px for desktop */
+				max-height: 800px; 
 				width: 100%; 
 				object-fit: cover; 
 			}
@@ -71,12 +71,12 @@
 			@media screen and (max-width: 768px) {
 				.item h3 { font-size: 1.1rem; }
 				.item p { font-size: 0.85rem; }
-				.item .image img { max-height: 600px; } /* Doubled from 300px for tablets */
+				.item .image img { max-height: 600px; }
 			}
 			@media screen and (max-width: 480px) {
 				.item h3 { font-size: 1rem; }
 				.item p { font-size: 0.8rem; }
-				.item .image img { max-height: 400px; } /* Doubled from 200px for mobile */
+				.item .image img { max-height: 400px; }
 			}
 		</style>
 	</head>
@@ -145,7 +145,7 @@
 						</div>
 						<div class="col-12">
 							<article class="item financial-transaction">
-								<!-- Tableau Dashboard at Original Size -->
+								<!-- Tableau Dashboard with Larger Size -->
 								<div class='tableauPlaceholder' id='viz1741522480452' style='position: relative'>
 									<noscript>
 										<a href='#'>
@@ -172,11 +172,11 @@
 									var divElement = document.getElementById('viz1741522480452');
 									var vizElement = divElement.getElementsByTagName('object')[0];
 									if ( divElement.offsetWidth > 800 ) { 
-										vizElement.style.width='1000px'; vizElement.style.height='827px'; 
+										vizElement.style.width='1200px'; vizElement.style.height='1000px'; // Larger for desktop
 									} else if ( divElement.offsetWidth > 500 ) { 
-										vizElement.style.width='1000px'; vizElement.style.height='827px'; 
+										vizElement.style.width='1000px'; vizElement.style.height='827px'; // Mid-size
 									} else { 
-										vizElement.style.width='100%'; vizElement.style.height='727px'; 
+										vizElement.style.width='100%'; vizElement.style.height='900px'; // Larger for mobile
 									}
 									var scriptElement = document.createElement('script');
 									scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
