@@ -50,17 +50,21 @@
 				width: 100%; 
 				object-fit: cover; 
 			}
-			/* Ensure Tableau iframe fits nicely and scales */
+			/* Ensure Tableau iframe fits and scales */
 			.tableauPlaceholder {
 				margin: 1rem auto;
 				max-width: 100%;
+				width: 100%; /* Force full width */
+				height: auto; /* Let height adjust to content */
 			}
-			/* Contain the Financial Transaction item height */
+			/* Specific styling for Financial Transaction item */
 			.item.financial-transaction {
+				display: flex;
+				flex-direction: column;
+				gap: 0.5rem; /* Reduce space between viz and text */
 				max-height: none; 
 				overflow: hidden; 
 			}
-
 			/* Full-width projects for all screen sizes */
 			.row > .col-12 { 
 				width: 100%; 
@@ -172,11 +176,13 @@
 									var divElement = document.getElementById('viz1741522480452');
 									var vizElement = divElement.getElementsByTagName('object')[0];
 									if ( divElement.offsetWidth > 800 ) { 
-										vizElement.style.width='1200px'; vizElement.style.height='1000px'; // Larger for desktop
+										vizElement.style.width='1200px'; vizElement.style.height='1000px'; 
 									} else if ( divElement.offsetWidth > 500 ) { 
-										vizElement.style.width='1000px'; vizElement.style.height='827px'; // Mid-size
+										vizElement.style.width='1000px'; vizElement.style.height='827px'; 
 									} else { 
-										vizElement.style.width='100%'; vizElement.style.height='900px'; // Larger for mobile
+										vizElement.style.width='100%'; vizElement.style.height='900px'; 
+										vizElement.style.maxWidth='100%'; // Ensure it doesn’t exceed container
+										vizElement.style.maxHeight='900px'; // Cap height to match intent
 									}
 									var scriptElement = document.createElement('script');
 									scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
@@ -188,16 +194,6 @@
 								<p>Summarized spending by category and flagged fraud in ~1.3M transactions using SQL, Python, and Tableau.</p>
 							</article>
 						</div>
-						<!-- Commented out additional project items -->
-						<!-- <div class="col-12">
-							<article class="item">
-								<a href="https://github.com/ibryam" class="image fit"><img src="assets/images/project2-screenshot.jpg" alt="Sales Dashboard" /></a>
-								<header>
-									<h3>Sales Dashboard</h3>
-								</header>
-								<p>Created an interactive Tableau dashboard to visualize sales trends for a retail client.</p>
-							</article>
-						</div> -->
 					</div>
 				</div>
 			</section>
