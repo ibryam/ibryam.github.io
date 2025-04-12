@@ -1,289 +1,270 @@
 <!DOCTYPE HTML>
 <!--
-	Prologue by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+    Prologue by HTML5 UP
+    html5up.net | @ajlkn
+    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
 <html>
-	<head>
-		<title>Ibryam Faik - Data Analyst Portfolio</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<!-- Custom Favicon -->
-		<link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
-		<style>
-			/* Base styles for all devices */
-			#portfolio { 
-				background-color: #f9f9f9; 
-				padding: 4rem 0; 
-			}
-			.item { 
-				text-align: center; 
-				margin-bottom: 2rem; 
-				background: #fff; 
-				border-radius: 8px; 
-				box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
-				padding: 1rem; 
-				transition: transform 0.3s ease; 
-			}
-			.item:hover { 
-				transform: translateY(-5px); 
-			}
-			.item h3 { 
-				color: #2c3e50; 
-				font-size: 1.25rem; 
-				margin: 0.5rem 0; 
-				line-height: 1.2; 
-			}
-			.item p { 
-				color: #666; 
-				font-size: 0.9rem; 
-				line-height: 1.5; 
-				margin: 0; 
-				padding: 0 0.5rem 0.5rem; 
-			}
-			.item .image img { 
-				border-radius: 4px; 
-				max-height: 800px; 
-				width: 100%; 
-				object-fit: cover; 
-			}
-			/* Tighten Tableau iframe spacing */
-			.tableauPlaceholder {
-				margin: 0.5rem auto; /* Reduced from 1rem to match West Ham */
-				max-width: 100%;
-				width: 100%;
-				height: auto;
-			}
-			/* Specific styling for Financial Transaction item */
-			.item.financial-transaction {
-				display: flex;
-				flex-direction: column;
-				gap: 0.25rem; /* Reduced from 0.5rem for tighter spacing */
-				max-height: none; 
-				overflow: hidden; 
-			}
-			/* Full-width projects for all screen sizes */
-			.row > .col-12 { 
-				width: 100%; 
-				padding: 0 1rem; 
-				margin-bottom: 2rem; 
-			}
-			/* Adjust font sizes and image height for smaller screens */
-			@media screen and (max-width: 768px) {
-				.item h3 { font-size: 1.1rem; }
-				.item p { font-size: 0.85rem; }
-				.item .image img { max-height: 600px; }
-			}
-			@media screen and (max-width: 480px) {
-				.item h3 { font-size: 1rem; }
-				.item p { font-size: 0.8rem; }
-				.item .image img { max-height: 400px; }
-			}
-		</style>
-	</head>
-	<body class="is-preload">
+    <head>
+        <title>Ibryam Faik - Data Analyst Portfolio</title>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <link rel="stylesheet" href="assets/css/main.css" />
+        <link rel="stylesheet" href="assets/css/dcf-calculator.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!-- Custom Favicon -->
+        <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+    </head>
+    <body class="is-preload">
 
-		<!-- Header -->
-		<div id="header">
-			<div class="top">
-				<div id="logo">
-					<span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
-					<h1 id="title">Ibryam Faik</h1>
-					<p>Data Analyst</p>
-				</div>
-				<nav id="nav">
-					<ul>
-						<li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
-						<li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
-						<li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
-						<li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
-					</ul>
-				</nav>
-			</div>
-			<div class="bottom">
-				<ul class="icons">
-					<li><a href="https://x.com/ibryam_" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
-					<li><a href="https://public.tableau.com/app/profile/ibryam" class="icon solid fa-chart-bar"><span class="label">Tableau Public</span></a></li>
-					<li><a href="https://github.com/ibryam" class="icon brands fa-github"><span class="label">Github</span></a></li>
-					<li><a href="https://linkedin.com/in/ibryam" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
-					<li><a href="mailto:ibryamfibryam@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-			</div>
-		</div>
+        <!-- Header -->
+        <div id="header">
+            <div class="top">
+                <div id="logo">
+                    <span class="image avatar48"><img src="images/avatar.jpg" alt="" /></span>
+                    <h1 id="title">Ibryam Faik</h1>
+                    <p>Data Analyst</p>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="#top" id="top-link"><span class="icon solid fa-home">Intro</span></a></li>
+                        <li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
+                        <li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
+                        <li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
+                        <li><a href="#intrinsic" id="intrinsic-link"><span class="icon solid fa-calculator">Intrinsic Value</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="bottom">
+                <ul class="icons">
+                    <li><a href="https://x.com/ibryam_" class="icon brands fa-x-twitter"><span class="label">X</span></a></li>
+                    <li><a href="https://public.tableau.com/app/profile/ibryam" class="icon solid fa-chart-bar"><span class="label">Tableau Public</span></a></li>
+                    <li><a href="https://github.com/ibryam" class="icon brands fa-github"><span class="label">Github</span></a></li>
+                    <li><a href="https://linkedin.com/in/ibryam" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+                    <li><a href="mailto:ibryamfibryam@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+                </ul>
+            </div>
+        </div>
 
-		<!-- Main -->
-		<div id="main">
-			<!-- Intro -->
-			<section id="top" class="one dark cover">
-				<div class="container">
-					<header>
-						<h2 class="alt">Hi! I'm <strong>Ibryam Faik</strong>, a Data Analyst<br />
-						turning data into stories.</h2>
-						<p>Explore my work below and let’s connect!</p>
-					</header>
-					<footer>
-						<a href="#portfolio" class="button scrolly">View My Projects</a>
-					</footer>
-				</div>
-			</section>
+        <!-- Main -->
+        <div id="main">
+            <!-- Intro -->
+            <section id="top" class="one dark cover">
+                <div class="container">
+                    <header>
+                        <h2 class="alt">Hi! I'm <strong>Ibryam Faik</strong>, a Data Analyst<br />
+                        turning data into stories.</h2>
+                        <p>Explore my work below and let’s connect!</p>
+                    </header>
+                    <footer>
+                        <a href="#portfolio" class="button scrolly">View My Projects</a>
+                    </footer>
+                </div>
+            </section>
 
-			<!-- Portfolio -->
-			<section id="portfolio" class="two">
-				<div class="container">
-					<header>
-						<h2>Portfolio</h2>
-					</header>
-					<p>Here are some of my data analysis projects showcasing my skills in Python, SQL, and data visualization.</p>
-					<div class="row">
-						<div class="col-12">
-							<article class="item">
-								<a href="https://github.com/ibryam/west-ham-united-betting-model" class="image fit"><img src="assets/images/west-ham-screenshot.jpg" alt="West Ham Predicting Model" /></a>
-								<header>
-									<h3>West Ham Predicting Model</h3>
-								</header>
-								<p>The model is trained with 2023 matches of the team and has an 89% accuracy rate.</p>
-							</article>
-						</div>
-						<div class="col-12">
-							<article class="item financial-transaction">
-								<!-- Tableau Dashboard with Larger Size -->
-								<div class='tableauPlaceholder' id='viz1741522480452' style='position: relative'>
-									<noscript>
-										<a href='#'>
-											<img alt='Spending by Category ' src='https://public.tableau.com/static/images/Fi/FinancialTranscationAnalysis-FraudDetectionProject/SepndingbyCategory/1_rss.png' style='border: none' />
-										</a>
-									</noscript>
-									<object class='tableauViz' style='display:none;'>
-										<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-										<param name='embed_code_version' value='3' />
-										<param name='site_root' value='' />
-										<param name='name' value='FinancialTranscationAnalysis-FraudDetectionProject/SepndingbyCategory' />
-										<param name='tabs' value='no' />
-										<param name='toolbar' value='yes' />
-										<param name='static_image' value='https://public.tableau.com/static/images/Fi/FinancialTranscationAnalysis-FraudDetectionProject/SepndingbyCategory/1.png' />
-										<param name='animate_transition' value='yes' />
-										<param name='display_static_image' value='yes' />
-										<param name='display_spinner' value='yes' />
-										<param name='display_overlay' value='yes' />
-										<param name='display_count' value='yes' />
-										<param name='language' value='en-US' />
-									</object>
-								</div>
-								<script type='text/javascript'>
-									var divElement = document.getElementById('viz1741522480452');
-									var vizElement = divElement.getElementsByTagName('object')[0];
-									if ( divElement.offsetWidth > 800 ) { 
-										vizElement.style.width='1200px'; vizElement.style.height='1000px'; 
-									} else if ( divElement.offsetWidth > 500 ) { 
-										vizElement.style.width='1000px'; vizElement.style.height='827px'; 
-									} else { 
-										vizElement.style.width='100%'; vizElement.style.height='900px'; 
-										vizElement.style.maxWidth='100%'; 
-										vizElement.style.maxHeight='900px'; 
-									}
-									var scriptElement = document.createElement('script');
-									scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-									vizElement.parentNode.insertBefore(scriptElement, vizElement);
-								</script>
-								<header>
-									<h3><a href="https://github.com/ibryam/financial-analysis-fraud-detection">Financial Transaction Analysis</a></h3>
-								</header>
-								<p>Summarized spending by category and flagged fraud in ~1.3M transactions using SQL, Python, and Tableau.</p>
-							</article>
-						</div>
-						<div class="col-12">
-							<article class="item financial-transaction">
-								<!-- Tableau Dashboard for House Prices Prediction -->
-								<div class='tableauPlaceholder' id='viz1742113915590' style='position: relative'>
-									<noscript>
-										<a href='#'>
-											<img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/9D/9D3D9TDZB/1_rss.png' style='border: none' />
-										</a>
-									</noscript>
-									<object class='tableauViz' style='display:none;'>
-										<param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-										<param name='embed_code_version' value='3' />
-										<param name='path' value='shared/9D3D9TDZB' />
-										<param name='toolbar' value='yes' />
-										<param name='static_image' value='https://public.tableau.com/static/images/9D/9D3D9TDZB/1.png' />
-										<param name='animate_transition' value='yes' />
-										<param name='display_static_image' value='yes' />
-										<param name='display_spinner' value='yes' />
-										<param name='display_overlay' value='yes' />
-										<param name='display_count' value='yes' />
-										<param name='language' value='en-US' />
-										<param name='filter' value='publish=yes' />
-									</object>
-								</div>
-								<script type='text/javascript'>
-									var divElement = document.getElementById('viz1742113915590');
-									var vizElement = divElement.getElementsByTagName('object')[0];
-									if ( divElement.offsetWidth > 800 ) { 
-										vizElement.style.width='900px'; vizElement.style.height='672px';
-									} else if ( divElement.offsetWidth > 500 ) { 
-										vizElement.style.width='900px'; vizElement.style.height='672px';
-									} else { 
-										vizElement.style.width='100%'; vizElement.style.height='727px';
-									}
-									var scriptElement = document.createElement('script');
-									scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-									vizElement.parentNode.insertBefore(scriptElement, vizElement);
-								</script>
-								<header>
-									<h3><a href="https://github.com/ibryam/house-price-prediction">House Prices Prediction with Multiple Linear Regression</a></h3>
-								</header>
-								<p>Predicts house prices using 3 features: area, room count, and age of building with multiple linear regression.</p>
-							</article>
-						</div>
-					</div>
-				</div>
-			</section>
+            <!-- Portfolio -->
+            <section id="portfolio" class="two">
+                <div class="container">
+                    <header>
+                        <h2>Portfolio</h2>
+                    </header>
+                    <p>Here are some of my data analysis projects showcasing my skills in Python, SQL, and data visualization.</p>
+                    <div class="row">
+                        <div class="col-12">
+                            <article class="item">
+                                <a href="https://github.com/ibryam/west-ham-united-betting-model" class="image fit"><img src="assets/images/west-ham-screenshot.jpg" alt="West Ham Predicting Model" /></a>
+                                <header>
+                                    <h3>West Ham Predicting Model</h3>
+                                </header>
+                                <p>The model is trained with 2023 matches of the team and has an 89% accuracy rate.</p>
+                            </article>
+                        </div>
+                        <div class="col-12">
+                            <article class="item financial-transaction">
+                                <div class='tableauPlaceholder' id='viz1741522480452' style='position: relative'>
+                                    <noscript>
+                                        <a href='#'>
+                                            <img alt='Spending by Category ' src='https://public.tableau.com/static/images/Fi/FinancialTranscationAnalysis-FraudDetectionProject/SepndingbyCategory/1_rss.png' style='border: none' />
+                                        </a>
+                                    </noscript>
+                                    <object class='tableauViz' style='display:none;'>
+                                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                        <param name='embed_code_version' value='3' />
+                                        <param name='site_root' value='' />
+                                        <param name='name' value='FinancialTranscationAnalysis-FraudDetectionProject/SepndingbyCategory' />
+                                        <param name='tabs' value='no' />
+                                        <param name='toolbar' value='yes' />
+                                        <param name='static_image' value='https://public.tableau.com/static/images/Fi/FinancialTranscationAnalysis-FraudDetectionProject/SepndingbyCategory/1.png' />
+                                        <param name='animate_transition' value='yes' />
+                                        <param name='display_static_image' value='yes' />
+                                        <param name='display_spinner' value='yes' />
+                                        <param name='display_overlay' value='yes' />
+                                        <param name='display_count' value='yes' />
+                                        <param name='language' value='en-US' />
+                                    </object>
+                                </div>
+                                <script type='text/javascript'>
+                                    var divElement = document.getElementById('viz1741522480452');
+                                    var vizElement = divElement.getElementsByTagName('object')[0];
+                                    if ( divElement.offsetWidth > 800 ) { 
+                                        vizElement.style.width='1200px'; vizElement.style.height='1000px'; 
+                                    } else if ( divElement.offsetWidth > 500 ) { 
+                                        vizElement.style.width='1000px'; vizElement.style.height='827px'; 
+                                    } else { 
+                                        vizElement.style.width='100%'; vizElement.style.height='900px'; 
+                                        vizElement.style.maxWidth='100%'; 
+                                        vizElement.style.maxHeight='900px'; 
+                                    }
+                                    var scriptElement = document.createElement('script');
+                                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                </script>
+                                <header>
+                                    <h3><a href="https://github.com/ibryam/financial-analysis-fraud-detection">Financial Transaction Analysis</a></h3>
+                                </header>
+                                <p>Summarized spending by category and flagged fraud in ~1.3M transactions using SQL, Python, and Tableau.</p>
+                            </article>
+                        </div>
+                        <div class="col-12">
+                            <article class="item financial-transaction">
+                                <div class='tableauPlaceholder' id='viz1742113915590' style='position: relative'>
+                                    <noscript>
+                                        <a href='#'>
+                                            <img alt='Dashboard 1 ' src='https://public.tableau.com/static/images/9D/9D3D9TDZB/1_rss.png' style='border: none' />
+                                        </a>
+                                    </noscript>
+                                    <object class='tableauViz' style='display:none;'>
+                                        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                                        <param name='embed_code_version' value='3' />
+                                        <param name='path' value='shared/9D3D9TDZB' />
+                                        <param name='toolbar' value='yes' />
+                                        <param name='static_image' value='https://public.tableau.com/static/images/9D/9D3D9TDZB/1.png' />
+                                        <param name='animate_transition' value='yes' />
+                                        <param name='display_static_image' value='yes' />
+                                        <param name='display_spinner' value='yes' />
+                                        <param name='display_overlay' value='yes' />
+                                        <param name='display_count' value='yes' />
+                                        <param name='language' value='en-US' />
+                                        <param name='filter' value='publish=yes' />
+                                    </object>
+                                </div>
+                                <script type='text/javascript'>
+                                    var divElement = document.getElementById('viz1742113915590');
+                                    var vizElement = divElement.getElementsByTagName('object')[0];
+                                    if ( divElement.offsetWidth > 800 ) { 
+                                        vizElement.style.width='900px'; vizElement.style.height='672px';
+                                    } else if ( divElement.offsetWidth > 500 ) { 
+                                        vizElement.style.width='900px'; vizElement.style.height='672px';
+                                    } else { 
+                                        vizElement.style.width='100%'; vizElement.style.height='727px';
+                                    }
+                                    var scriptElement = document.createElement('script');
+                                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+                                    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+                                </script>
+                                <header>
+                                    <h3><a href="https://github.com/ibryam/house-price-prediction">House Prices Prediction with Multiple Linear Regression</a></h3>
+                                </header>
+                                <p>Predicts house prices using 3 features: area, room count, and age of building with multiple linear regression.</p>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
-			<!-- About Me -->
-			<section id="about" class="three">
-				<div class="container">
-					<header>
-						<h2>About Me</h2>
-					</header>
-					<a href="#" class="image featured"><img src="assets/images/ibryam-photo.jpg" alt="Ibryam Faik" /></a>
-					<p>Hi, I’m Ibryam Faik, a passionate Data Analyst with expertise in Python, SQL, and data visualization. I love turning raw data into actionable insights and have worked on projects ranging from predictive modeling to interactive dashboards. When I’m not crunching numbers, you’ll find me exploring new datasets or refining my coding skills.</p>
-				</div>
-			</section>
+            <!-- About Me -->
+            <section id="about" class="three">
+                <div class="container">
+                    <header>
+                        <h2>About Me</h2>
+                    </header>
+                    <a href="#" class="image featured"><img src="assets/images/ibryam-photo.jpg" alt="Ibryam Faik" /></a>
+                    <p>Hi, I’m Ibryam Faik, a passionate Data Analyst with expertise in Python, SQL, and data visualization. I love turning raw data into actionable insights and have worked on projects ranging from predictive modeling to interactive dashboards. When I’m not crunching numbers, you’ll find me exploring new datasets or refining my coding skills.</p>
+                </div>
+            </section>
 
-			<!-- Contact -->
-			<section id="contact" class="four">
-				<div class="container">
-					<header>
-						<h2>Contact</h2>
-					</header>
-					<p>Feel free to reach out for collaboration, job opportunities, or just to chat about data!</p>
-					<ul>
-						<li>Email: <a href="mailto:ibryamfibryam@gmail.com">ibryamfibryam@gmail.com</a></li>
-						<li>LinkedIn: <a href="https://linkedin.com/in/ibryam">linkedin.com/in/ibryam</a></li>
-						<li>GitHub: <a href="https://github.com/ibryam">github.com/ibryam</a></li>
-					</ul>
-				</div>
-			</section>
-		</div>
+            <!-- Contact -->
+            <section id="contact" class="four">
+                <div class="container">
+                    <header>
+                        <h2>Contact</h2>
+                    </header>
+                    <p>Feel free to reach out for collaboration, job opportunities, or just to chat about data!</p>
+                    <ul>
+                        <li>Email: <a href="mailto:ibryamfibryam@gmail.com">ibryamfibryam@gmail.com</a></li>
+                        <li>LinkedIn: <a href="https://linkedin.com/in/ibryam">linkedin.com/in/ibryam</a></li>
+                        <li>GitHub: <a href="https://github.com/ibryam">github.com/ibryam</a></li>
+                    </ul>
+                </div>
+            </section>
 
-		<!-- Footer -->
-		<div id="footer">
-			<ul class="copyright">
-				<li>© Ibryam Faik - All rights reserved.</li><li>Phone: +359 8777 63362</li>
-			</ul>
-		</div>
+            <!-- Intrinsic Value Calculator -->
+            <section id="intrinsic" class="four">
+                <div class="container">
+                    <header>
+                        <h2>Intrinsic Value Calculator</h2>
+                    </header>
+                    <p>Calculate a company's intrinsic value using the Discounted Cash Flow (DCF) method. Enter the required inputs and click Calculate to see results.</p>
+                    <form id="dcf-form">
+                        <div>
+                            <label for="current-fcf">Current Free Cash Flow (FCF, in millions):</label>
+                            <input type="number" id="current-fcf" step="0.01" placeholder="e.g., 50" required>
+                        </div>
+                        <div>
+                            <label for="growth-rate-1-5">Growth Rate Years 1–5 (%):</label>
+                            <input type="number" id="growth-rate-1-5" step="0.01" placeholder="e.g., 5" required>
+                        </div>
+                        <div>
+                            <label for="growth-rate-6-10">Growth Rate Years 6–10 (%):</label>
+                            <input type="number" id="growth-rate-6-10" step="0.01" placeholder="e.g., 3" required>
+                        </div>
+                        <div>
+                            <label for="discount-rate">Discount Rate (%):</label>
+                            <input type="number" id="discount-rate" step="0.01" placeholder="e.g., 25" required>
+                        </div>
+                        <div>
+                            <label for="terminal-growth-rate">Terminal Growth Rate (%):</label>
+                            <input type="number" id="terminal-growth-rate" step="0.01" placeholder="e.g., 2" required>
+                        </div>
+                        <div>
+                            <label for="shares-outstanding">Shares Outstanding (in millions):</label>
+                            <input type="number" id="shares-outstanding" step="0.01" placeholder="e.g., 50" required>
+                        </div>
+                        <div>
+                            <label for="stock-price">Current Stock Price:</label>
+                            <input type="number" id="stock-price" step="0.01" placeholder="e.g., 50" required>
+                        </div>
+                        <button type="submit" class="button">Calculate</button>
+                    </form>
+                    <div id="results">
+                        <p>Year 10 Free Cash Flow: <span id="year10-fcf"></span> million</p>
+                        <p>Year 10 PV of FCF: <span id="year10-pv-fcf"></span> million</p>
+                        <p>Terminal Value (Year 10): <span id="terminal-value"></span> million</p>
+                        <p>PV of Terminal Value: <span id="pv-terminal-value"></span> million</p>
+                        <p>Total PV of FCF (Years 1–10): <span id="total-pv-fcf"></span> million</p>
+                        <p>Enterprise Value: <span id="enterprise-value"></span> million</p>
+                        <p>Intrinsic Value per Share: <span id="intrinsic-value"></span></p>
+                        <p>Margin of Safety: <span id="margin-safety"></span>%</p>
+                    </div>
+                </div>
+            </section>
+        </div>
 
-		<!-- Scripts -->
-		<script src="assets/js/jquery.min.js"></script>
-		<script src="assets/js/jquery.scrolly.min.js"></script>
-		<script src="assets/js/jquery.scrollex.min.js"></script>
-		<script src="assets/js/browser.min.js"></script>
-		<script src="assets/js/breakpoints.min.js"></script>
-		<script src="assets/js/util.js"></script>
-		<script src="assets/js/main.js"></script>
+        <!-- Footer -->
+        <div id="footer">
+            <ul class="copyright">
+                <li>© Ibryam Faik - All rights reserved.</li><li>Phone: +359 8777 63362</li>
+            </ul>
+        </div>
 
-	</body>
+        <!-- Scripts -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.scrolly.min.js"></script>
+        <script src="assets/js/jquery.scrollex.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+        <script src="assets/js/dcf-calculator.js"></script>
+    </body>
 </html>
