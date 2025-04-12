@@ -10,10 +10,79 @@
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
         <link rel="stylesheet" href="assets/css/main.css" />
-        <link rel="stylesheet" href="assets/css/dcf-calculator.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
         <!-- Custom Favicon -->
         <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico" />
+        <style>
+            /* Base styles for all devices */
+            #portfolio { 
+                background-color: #f9f9f9; 
+                padding: 4rem 0; 
+            }
+            .item { 
+                text-align: center; 
+                margin-bottom: 2rem; 
+                background: #fff; 
+                border-radius: 8px; 
+                box-shadow: 0 2px 5px rgba(0,0,0,0.1); 
+                padding: 1rem; 
+                transition: transform 0.3s ease; 
+            }
+            .item:hover { 
+                transform: translateY(-5px); 
+            }
+            .item h3 { 
+                color: #2c3e50; 
+                font-size: 1.25rem; 
+                margin: 0.5rem 0; 
+                line-height: 1.2; 
+            }
+            .item p { 
+                color: #666; 
+                font-size: 0.9rem; 
+                line-height: 1.5; 
+                margin: 0; 
+                padding: 0 0.5rem 0.5rem; 
+            }
+            .item .image img { 
+                border-radius: 4px; 
+                max-height: 800px; 
+                width: 100%; 
+                object-fit: cover; 
+            }
+            /* Tighten Tableau iframe spacing */
+            .tableauPlaceholder {
+                margin: 0.5rem auto; /* Reduced from 1rem to match West Ham */
+                max-width: 100%;
+                width: 100%;
+                height: auto;
+            }
+            /* Specific styling for Financial Transaction item */
+            .item.financial-transaction {
+                display: flex;
+                flex-direction: column;
+                gap: 0.25rem; /* Reduced from 0.5rem for tighter spacing */
+                max-height: none; 
+                overflow: hidden; 
+            }
+            /* Full-width projects for all screen sizes */
+            .row > .col-12 { 
+                width: 100%; 
+                padding: 0 1rem; 
+                margin-bottom: 2rem; 
+            }
+            /* Adjust font sizes and image height for smaller screens */
+            @media screen and (max-width: 768px) {
+                .item h3 { font-size: 1.1rem; }
+                .item p { font-size: 0.85rem; }
+                .item .image img { max-height: 600px; }
+            }
+            @media screen and (max-width: 480px) {
+                .item h3 { font-size: 1rem; }
+                .item p { font-size: 0.8rem; }
+                .item .image img { max-height: 400px; }
+            }
+        </style>
     </head>
     <body class="is-preload">
 
@@ -31,7 +100,6 @@
                         <li><a href="#portfolio" id="portfolio-link"><span class="icon solid fa-th">Portfolio</span></a></li>
                         <li><a href="#about" id="about-link"><span class="icon solid fa-user">About Me</span></a></li>
                         <li><a href="#contact" id="contact-link"><span class="icon solid fa-envelope">Contact</span></a></li>
-                        <li><a href="#intrinsic" id="intrinsic-link"><span class="icon solid fa-calculator">Intrinsic Value</span></a></li>
                     </ul>
                 </nav>
             </div>
@@ -81,6 +149,7 @@
                         </div>
                         <div class="col-12">
                             <article class="item financial-transaction">
+                                <!-- Tableau Dashboard with Larger Size -->
                                 <div class='tableauPlaceholder' id='viz1741522480452' style='position: relative'>
                                     <noscript>
                                         <a href='#'>
@@ -127,6 +196,7 @@
                         </div>
                         <div class="col-12">
                             <article class="item financial-transaction">
+                                <!-- Tableau Dashboard for House Prices Prediction -->
                                 <div class='tableauPlaceholder' id='viz1742113915590' style='position: relative'>
                                     <noscript>
                                         <a href='#'>
@@ -197,57 +267,6 @@
                     </ul>
                 </div>
             </section>
-
-            <!-- Intrinsic Value Calculator -->
-            <section id="intrinsic" class="four">
-                <div class="container">
-                    <header>
-                        <h2>Intrinsic Value Calculator</h2>
-                    </header>
-                    <p>Calculate a company's intrinsic value using the Discounted Cash Flow (DCF) method. Enter the required inputs and click Calculate to see results.</p>
-                    <form id="dcf-form">
-                        <div>
-                            <label for="current-fcf">Current Free Cash Flow (FCF, in millions):</label>
-                            <input type="number" id="current-fcf" step="0.01" placeholder="e.g., 50" required>
-                        </div>
-                        <div>
-                            <label for="growth-rate-1-5">Growth Rate Years 1–5 (%):</label>
-                            <input type="number" id="growth-rate-1-5" step="0.01" placeholder="e.g., 5" required>
-                        </div>
-                        <div>
-                            <label for="growth-rate-6-10">Growth Rate Years 6–10 (%):</label>
-                            <input type="number" id="growth-rate-6-10" step="0.01" placeholder="e.g., 3" required>
-                        </div>
-                        <div>
-                            <label for="discount-rate">Discount Rate (%):</label>
-                            <input type="number" id="discount-rate" step="0.01" placeholder="e.g., 25" required>
-                        </div>
-                        <div>
-                            <label for="terminal-growth-rate">Terminal Growth Rate (%):</label>
-                            <input type="number" id="terminal-growth-rate" step="0.01" placeholder="e.g., 2" required>
-                        </div>
-                        <div>
-                            <label for="shares-outstanding">Shares Outstanding (in millions):</label>
-                            <input type="number" id="shares-outstanding" step="0.01" placeholder="e.g., 50" required>
-                        </div>
-                        <div>
-                            <label for="stock-price">Current Stock Price:</label>
-                            <input type="number" id="stock-price" step="0.01" placeholder="e.g., 50" required>
-                        </div>
-                        <button type="submit" class="button">Calculate</button>
-                    </form>
-                    <div id="results">
-                        <p>Year 10 Free Cash Flow: <span id="year10-fcf"></span> million</p>
-                        <p>Year 10 PV of FCF: <span id="year10-pv-fcf"></span> million</p>
-                        <p>Terminal Value (Year 10): <span id="terminal-value"></span> million</p>
-                        <p>PV of Terminal Value: <span id="pv-terminal-value"></span> million</p>
-                        <p>Total PV of FCF (Years 1–10): <span id="total-pv-fcf"></span> million</p>
-                        <p>Enterprise Value: <span id="enterprise-value"></span> million</p>
-                        <p>Intrinsic Value per Share: <span id="intrinsic-value"></span></p>
-                        <p>Margin of Safety: <span id="margin-safety"></span>%</p>
-                    </div>
-                </div>
-            </section>
         </div>
 
         <!-- Footer -->
@@ -265,6 +284,6 @@
         <script src="assets/js/breakpoints.min.js"></script>
         <script src="assets/js/util.js"></script>
         <script src="assets/js/main.js"></script>
-        <script src="assets/js/dcf-calculator.js"></script>
+
     </body>
 </html>
