@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ibryam Fibryam — Analytics Engineer</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:       #1B2A4A;
+      --navy-light: #243557;
+      --navy-card:  #1E3060;
+      --teal:       #2EC4A6;
+      --gold:       #E8A838;
+      --purple:     #9B72CF;
+      --blue:       #5B9BD5;
+      --text:       #E8EDF5;
+      --muted:      #8FA3C0;
+      --border:     rgba(46,196,166,0.2);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--navy);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; width: 100%; z-index: 100;
+      background: rgba(27,42,74,0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 60px;
+    }
+    .nav-name { font-weight: 700; font-size: 1rem; color: var(--teal); letter-spacing: 0.5px; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--teal); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+      background: radial-gradient(ellipse at 50% 60%, rgba(46,196,166,0.07) 0%, transparent 70%);
+    }
+    .hero-inner { max-width: 720px; }
+    .hero-tag {
+      display: inline-block;
+      background: rgba(46,196,166,0.12);
+      color: var(--teal);
+      border: 1px solid rgba(46,196,166,0.3);
+      border-radius: 20px;
+      padding: 0.3rem 1rem;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 5vw, 3.4rem);
+      font-weight: 800;
+      line-height: 1.15;
+      margin-bottom: 1.2rem;
+      color: #fff;
+    }
+    .hero h1 span { color: var(--teal); }
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--muted);
+      max-width: 580px;
+      margin: 0 auto 2.5rem;
+      line-height: 1.7;
+    }
+    .hero-cta { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.8rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+      cursor: pointer;
+    }
+    .btn-primary { background: var(--teal); color: var(--navy); }
+    .btn-primary:hover { background: #26b395; transform: translateY(-1px); }
+    .btn-outline { border: 1px solid var(--border); color: var(--text); }
+    .btn-outline:hover { border-color: var(--teal); color: var(--teal); transform: translateY(-1px); }
+
+    /* ── STATS BAR ── */
+    .stats {
+      background: var(--navy-light);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.8rem 2rem;
+    }
+    .stats-inner {
+      max-width: 900px; margin: 0 auto;
+      display: flex; justify-content: space-around; flex-wrap: wrap; gap: 1rem;
+      text-align: center;
+    }
+    .stat-num { font-size: 1.8rem; font-weight: 800; color: var(--teal); }
+    .stat-label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+
+    /* ── SECTIONS ── */
+    section { padding: 5rem 2rem; }
+    .section-inner { max-width: 960px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--teal);
+      margin-bottom: 0.6rem;
+    }
+    .section-title {
+      font-size: clamp(1.6rem, 3vw, 2.2rem);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 1rem;
+    }
+    .section-desc { color: var(--muted); max-width: 600px; margin-bottom: 3rem; line-height: 1.7; }
+
+    /* ── PROJECT CARDS ── */
+    .projects-grid { display: grid; gap: 2rem; }
+    .project-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 2.5rem;
+      transition: border-color 0.3s, transform 0.2s;
+      position: relative;
+      overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--accent, var(--teal));
+    }
+    .project-card:hover { border-color: var(--accent, var(--teal)); transform: translateY(-3px); }
+
+    .project-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; flex-wrap: wrap; }
+    .project-title { font-size: 1.35rem; font-weight: 700; color: #fff; }
+    .project-links { display: flex; gap: 0.6rem; flex-shrink: 0; }
+    .project-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+    .link-dashboard { background: var(--accent, var(--teal)); color: var(--navy); }
+    .link-dashboard:hover { opacity: 0.85; }
+    .link-github { border: 1px solid var(--border); color: var(--muted); }
+    .link-github:hover { color: var(--text); border-color: var(--muted); }
+
+    .project-summary { font-size: 1rem; color: var(--text); margin-bottom: 1.2rem; line-height: 1.7; }
+    .project-what { font-size: 0.9rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.7; }
+
+    .project-highlights {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 0.8rem; margin-bottom: 1.8rem;
+    }
+    .highlight {
+      background: rgba(255,255,255,0.04);
+      border-radius: 8px;
+      padding: 0.8rem 1rem;
+    }
+    .highlight-val { font-size: 1.1rem; font-weight: 700; color: var(--accent, var(--teal)); }
+    .highlight-label { font-size: 0.78rem; color: var(--muted); }
+
+    .tech-stack { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .tech-badge {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 20px;
+      padding: 0.25rem 0.8rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* ── SKILLS ── */
+    .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+    .skill-group {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.5rem;
+    }
+    .skill-group-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--teal); margin-bottom: 1rem; }
+    .skill-item { font-size: 0.9rem; color: var(--text); padding: 0.3rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); }
+    .skill-item:last-child { border-bottom: none; }
+
+    /* ── ABOUT ── */
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .about-text p { color: var(--muted); line-height: 1.8; margin-bottom: 1rem; }
+    .about-text p strong { color: var(--text); }
+    .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.5rem; }
+    .about-tag {
+      background: rgba(46,196,166,0.1);
+      border: 1px solid rgba(46,196,166,0.2);
+      color: var(--teal);
+      border-radius: 20px;
+      padding: 0.3rem 0.9rem;
+      font-size: 0.82rem;
+    }
+    .about-card {
+      background: var(--navy-card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem;
+    }
+    .about-card-title { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--teal); margin-bottom: 1.2rem; }
+    .about-card-item { display: flex; justify-content: space-between; padding: 0.5rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.88rem; }
+    .about-card-item:last-child { border-bottom: none; }
+    .about-card-item span:first-child { color: var(--muted); }
+    .about-card-item span:last-child { color: var(--text); font-weight: 600; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy-light);
+      border-top: 1px solid var(--border);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .footer-links { display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 1rem; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.9rem; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--teal); }
+    .footer-copy { font-size: 0.8rem; color: var(--muted); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 700px) {
+      .about-grid { grid-template-columns: 1fr; }
+      .project-header { flex-direction: column; }
+      .nav-links { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <span class="nav-name">Ibryam Fibryam</span>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Analytics Engineer · Open to Swiss opportunities</div>
+    <h1>Turning raw data into<br><span>reliable business intelligence</span></h1>
+    <p class="hero-sub">
+      I design and build data pipelines that collect, clean, test, and visualise information automatically —
+      so teams always have accurate, up-to-date data without manual work.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="https://www.linkedin.com/in/ibryam-fibryam" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <a href="https://github.com/ibryam" target="_blank" class="btn btn-outline">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAR -->
+<div class="stats">
+  <div class="stats-inner">
+    <div>
+      <div class="stat-num">5+</div>
+      <div class="stat-label">Years Experience</div>
+    </div>
+    <div>
+      <div class="stat-num">2</div>
+      <div class="stat-label">Live Dashboards</div>
+    </div>
+    <div>
+      <div class="stat-num">35+</div>
+      <div class="stat-label">Automated Data Tests</div>
+    </div>
+    <div>
+      <div class="stat-num">3</div>
+      <div class="stat-label">Data Sources per Project</div>
+    </div>
+    <div>
+      <div class="stat-num">0 CHF</div>
+      <div class="stat-label">Infrastructure Cost</div>
+    </div>
+  </div>
+</div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="section-inner">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">End-to-End Data Projects</h2>
+    <p class="section-desc">
+      Each project is fully automated — data is collected, processed, tested, and published without manual steps.
+      All source code is public on GitHub.
+    </p>
+
+    <div class="projects-grid">
+
+      <!-- Swiss Macro Monitor -->
+      <div class="project-card" style="--accent: #2EC4A6;">
+        <div class="project-header">
+          <div class="project-title">Swiss Macro Monitor</div>
+          <div class="project-links">
+            <a href="https://public.tableau.com/app/profile/ibryam/viz/SwissMacroMonitor/Overview"
+               target="_blank" class="project-link link-dashboard">Live Dashboard ↗</a>
+            <a href="https://github.com/ibryam/swiss-macro-monitor"
+               target="_blank" class="project-link link-github">GitHub</a>
+          </div>
+        </div>
+
+        <p class="project-summary">
+          A self-updating platform that monitors the health of the Swiss economy in real time.
+          It tracks 15 key indicators — interest rates, GDP growth, inflation, unemployment,
+          exchange rates and more — and classifies each one as <strong style="color:#27AE60">bullish</strong>,
+          <strong style="color:#C0392B">bearish</strong>, or neutral for Switzerland.
+        </p>
+        <p class="project-what">
+          Data is downloaded automatically every month from three official sources (Swiss National Bank,
+          US Federal Reserve FRED database, and OECD). The pipeline cleans, validates and transforms
+          the data through multiple quality checks before it reaches the dashboard.
+        </p>
+
+        <div class="project-highlights">
+          <div class="highlight">
+            <div class="highlight-val">15</div>
+            <div class="highlight-label">Swiss economic indicators tracked</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-val">27</div>
+            <div class="highlight-label">Automated data quality tests</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-val">3</div>
+            <div class="highlight-label">Official data sources (SNB, FRED, OECD)</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-val">Monthly</div>
+            <div class="highlight-label">Fully automated refresh — no manual work</div>
+          </div>
+        </div>
+
+        <div class="tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Google BigQuery</span>
+          <span class="tech-badge">dbt Core</span>
+          <span class="tech-badge">GitHub Actions</span>
+          <span class="tech-badge">Tableau Public</span>
+          <span class="tech-badge">SNB API</span>
+          <span class="tech-badge">FRED API</span>
+          <span class="tech-badge">OECD API</span>
+        </div>
+      </div>
+
+      <!-- SMI Risk Monitor -->
+      <div class="project-card" style="--accent: #9B72CF;">
+        <div class="project-header">
+          <div class="project-title">SMI Risk Monitor</div>
+          <div class="project-links">
+            <a href="https://public.tableau.com/app/profile/ibryam/viz/SMIRiskMonitor/Performance"
+               target="_blank" class="project-link link-dashboard" style="background: #9B72CF;">Live Dashboard ↗</a>
+            <a href="https://github.com/ibryam/smi-risk-monitor"
+               target="_blank" class="project-link link-github">GitHub</a>
+          </div>
+        </div>
+
+        <p class="project-summary">
+          A daily risk monitoring tool for the Swiss Market Index (SMI) — Switzerland's benchmark
+          stock index. It tracks all 20 SMI companies plus two benchmarks, calculating performance,
+          volatility and drawdown metrics for each stock every trading day.
+        </p>
+        <p class="project-what">
+          Market data is collected automatically after each trading session, stored in a cloud database,
+          and transformed into risk metrics. The dashboard allows analysts to compare stocks by risk level,
+          identify the most volatile positions, and examine individual price histories.
+        </p>
+
+        <div class="project-highlights">
+          <div class="highlight">
+            <div class="highlight-val">20</div>
+            <div class="highlight-label">SMI stocks tracked daily</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-val">Daily</div>
+            <div class="highlight-label">Automated pipeline after market close</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-val">3</div>
+            <div class="highlight-label">Dashboard tabs: Performance, Risk, Deep Dive</div>
+          </div>
+          <div class="highlight">
+            <div class="highlight-val">SIX</div>
+            <div class="highlight-label">Swiss Exchange — local market coverage</div>
+          </div>
+        </div>
+
+        <div class="tech-stack">
+          <span class="tech-badge">Python</span>
+          <span class="tech-badge">Google BigQuery</span>
+          <span class="tech-badge">dbt Core</span>
+          <span class="tech-badge">GitHub Actions</span>
+          <span class="tech-badge">Tableau Public</span>
+          <span class="tech-badge">Market Data API</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="background: var(--navy-light);">
+  <div class="section-inner">
+    <div class="section-label">Expertise</div>
+    <h2 class="section-title">Technical Skills</h2>
+    <p class="section-desc">Core tools used to build production-grade analytics pipelines from scratch.</p>
+
+    <div class="skills-grid">
+      <div class="skill-group">
+        <div class="skill-group-title">Data Engineering</div>
+        <div class="skill-item">dbt Core (data modelling)</div>
+        <div class="skill-item">Google BigQuery</div>
+        <div class="skill-item">SQL (advanced)</div>
+        <div class="skill-item">Pipeline architecture</div>
+        <div class="skill-item">Data quality testing</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Programming</div>
+        <div class="skill-item">Python (data pipelines)</div>
+        <div class="skill-item">REST API integration</div>
+        <div class="skill-item">pandas, requests</div>
+        <div class="skill-item">ETL / ELT design</div>
+        <div class="skill-item">Git & version control</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Automation & Cloud</div>
+        <div class="skill-item">GitHub Actions (CI/CD)</div>
+        <div class="skill-item">Google Cloud Platform</div>
+        <div class="skill-item">Scheduled pipelines</div>
+        <div class="skill-item">Secret management</div>
+        <div class="skill-item">Cloud storage (BigQuery)</div>
+      </div>
+      <div class="skill-group">
+        <div class="skill-group-title">Visualisation & BI</div>
+        <div class="skill-item">Tableau (Desktop + Public)</div>
+        <div class="skill-item">Dashboard design</div>
+        <div class="skill-item">KPI reporting</div>
+        <div class="skill-item">Financial data analysis</div>
+        <div class="skill-item">Time series analysis</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">Background</div>
+    <h2 class="section-title">About Me</h2>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p>
+          I am an <strong>Analytics Engineer with over 5 years of experience</strong> designing
+          data pipelines and building business intelligence solutions. My work focuses on making
+          data reliable, automatic, and easy to understand for both technical and non-technical teams.
+        </p>
+        <p>
+          I specialise in the <strong>full data stack</strong> — from connecting to external data sources
+          and storing data in the cloud, to transforming it with SQL and presenting it in interactive dashboards.
+          Every pipeline I build includes automated tests to catch data problems before they reach the business.
+        </p>
+        <p>
+          I am actively targeting opportunities in <strong>Swiss financial services</strong> and have built
+          my portfolio around Swiss market data specifically — because understanding the local market
+          context matters as much as technical skill.
+        </p>
+        <div class="about-tags">
+          <span class="about-tag">Analytics Engineering</span>
+          <span class="about-tag">Financial Data</span>
+          <span class="about-tag">Swiss Market</span>
+          <span class="about-tag">Data Quality</span>
+          <span class="about-tag">Pipeline Automation</span>
+        </div>
+      </div>
+
+      <div class="about-card">
+        <div class="about-card-title">At a Glance</div>
+        <div class="about-card-item">
+          <span>Experience</span><span>5+ years</span>
+        </div>
+        <div class="about-card-item">
+          <span>Core stack</span><span>dbt · BigQuery · Python</span>
+        </div>
+        <div class="about-card-item">
+          <span>Visualisation</span><span>Tableau</span>
+        </div>
+        <div class="about-card-item">
+          <span>Automation</span><span>GitHub Actions</span>
+        </div>
+        <div class="about-card-item">
+          <span>Focus area</span><span>Swiss financial data</span>
+        </div>
+        <div class="about-card-item">
+          <span>Languages</span><span>English · German (A2/B1)</span>
+        </div>
+        <div class="about-card-item">
+          <span>Availability</span><span>Open to offers</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-links">
+    <a href="https://www.linkedin.com/in/ibryam-fibryam" target="_blank">LinkedIn</a>
+    <a href="https://github.com/ibryam" target="_blank">GitHub</a>
+    <a href="https://public.tableau.com/app/profile/ibryam" target="_blank">Tableau Public</a>
+    <a href="mailto:ibryamfibryam@gmail.com">ibryamfibryam@gmail.com</a>
+  </div>
+  <p class="footer-copy">Built with HTML & CSS · Hosted on GitHub Pages · No tracking, no cookies</p>
+</footer>
+
+</body>
+</html>
