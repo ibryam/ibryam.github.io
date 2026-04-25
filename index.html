@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ibryam Fibryam — Analytics Engineer</title>
+  <title>Ibryam Faik — Analytics Engineer</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
       --navy:       #1B2A4A;
-      --navy-light: #243557;
-      --navy-card:  #1E3060;
+      --navy-light: #1F3156;
+      --navy-card:  #162444;
       --teal:       #2EC4A6;
       --gold:       #E8A838;
       --purple:     #9B72CF;
@@ -239,6 +239,27 @@
     .footer-links a:hover { color: var(--teal); }
     .footer-copy { font-size: 0.8rem; color: var(--muted); }
 
+    /* ── VIZ EMBED ── */
+    .viz-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      margin-top: 1.8rem;
+      background: #0d1b33;
+    }
+    .viz-scaler {
+      transform-origin: top left;
+      width: 1200px;
+      height: 800px;
+    }
+    .viz-scaler .tableauPlaceholder,
+    .viz-scaler .tableauViz {
+      width: 1200px !important;
+      height: 800px !important;
+    }
+
     /* ── RESPONSIVE ── */
     @media (max-width: 700px) {
       .about-grid { grid-template-columns: 1fr; }
@@ -251,7 +272,7 @@
 
 <!-- NAV -->
 <nav>
-  <span class="nav-name">Ibryam Fibryam</span>
+  <span class="nav-name">Ibryam Faik</span>
   <ul class="nav-links">
     <li><a href="#projects">Projects</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -262,15 +283,15 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-tag">Analytics Engineer · Open to Swiss opportunities</div>
-    <h1>Turning raw data into<br><span>reliable business intelligence</span></h1>
+    <div class="hero-tag">Analytics Engineer</div>
+    <h1>Ibryam Faik<br><span>Analytics Engineer</span></h1>
     <p class="hero-sub">
-      I design and build data pipelines that collect, clean, test, and visualise information automatically —
-      so teams always have accurate, up-to-date data without manual work.
+      Business Data Analyst at UKG · 5+ years in Tableau.<br>
+      I build automated data pipelines that turn raw numbers into reliable, always-current business intelligence.
     </p>
     <div class="hero-cta">
       <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="https://www.linkedin.com/in/ibryam-fibryam" target="_blank" class="btn btn-outline">LinkedIn</a>
+      <a href="https://www.linkedin.com/in/ibryam" target="_blank" class="btn btn-outline">LinkedIn</a>
       <a href="https://github.com/ibryam" target="_blank" class="btn btn-outline">GitHub</a>
     </div>
   </div>
@@ -367,6 +388,29 @@
           <span class="tech-badge">FRED API</span>
           <span class="tech-badge">OECD API</span>
         </div>
+
+        <div class="viz-container" id="container-swiss">
+          <div class="viz-scaler" id="scaler-swiss">
+            <div class="tableauPlaceholder" style="position:relative;">
+              <noscript>
+                <a href="https://public.tableau.com/app/profile/ibryam/viz/SwissMacroMonitor/Overview">Swiss Macro Monitor</a>
+              </noscript>
+              <object class="tableauViz">
+                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param name="name" value="SwissMacroMonitor/Overview" />
+                <param name="tabs" value="yes" />
+                <param name="toolbar" value="bottom" />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_count" value="yes" />
+                <param name="language" value="en-US" />
+              </object>
+            </div>
+          </div>
+        </div>
       </div>
 
       <!-- SMI Risk Monitor -->
@@ -418,6 +462,29 @@
           <span class="tech-badge">GitHub Actions</span>
           <span class="tech-badge">Tableau Public</span>
           <span class="tech-badge">Market Data API</span>
+        </div>
+
+        <div class="viz-container" id="container-smi">
+          <div class="viz-scaler" id="scaler-smi">
+            <div class="tableauPlaceholder" style="position:relative;">
+              <noscript>
+                <a href="https://public.tableau.com/app/profile/ibryam/viz/SMIRiskMonitor/Performance">SMI Risk Monitor</a>
+              </noscript>
+              <object class="tableauViz">
+                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+                <param name="embed_code_version" value="3" />
+                <param name="site_root" value="" />
+                <param name="name" value="SMIRiskMonitor/Performance" />
+                <param name="tabs" value="yes" />
+                <param name="toolbar" value="bottom" />
+                <param name="animate_transition" value="yes" />
+                <param name="display_static_image" value="yes" />
+                <param name="display_spinner" value="yes" />
+                <param name="display_count" value="yes" />
+                <param name="language" value="en-US" />
+              </object>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -478,51 +545,52 @@
     <div class="about-grid">
       <div class="about-text">
         <p>
-          I am an <strong>Analytics Engineer with over 5 years of experience</strong> designing
-          data pipelines and building business intelligence solutions. My work focuses on making
-          data reliable, automatic, and easy to understand for both technical and non-technical teams.
+          I am a <strong>Business Data Analyst at UKG</strong> with over 5 years of experience
+          in data visualisation, transformation, and pipeline engineering. My background spans
+          financial services (Experian) and enterprise software, giving me strong domain
+          knowledge alongside technical depth.
         </p>
         <p>
-          I specialise in the <strong>full data stack</strong> — from connecting to external data sources
-          and storing data in the cloud, to transforming it with SQL and presenting it in interactive dashboards.
-          Every pipeline I build includes automated tests to catch data problems before they reach the business.
+          I specialise in <strong>Tableau</strong> (5+ years), SQL, Python, and the modern
+          analytics stack — dbt, BigQuery, and GitHub Actions. I am endorsed in every project
+          for documentation quality and work closely with both engineering and business stakeholders.
         </p>
         <p>
-          I am actively targeting opportunities in <strong>Swiss financial services</strong> and have built
-          my portfolio around Swiss market data specifically — because understanding the local market
-          context matters as much as technical skill.
+          I built this portfolio specifically around <strong>Swiss financial market data</strong> —
+          SMI equities and Swiss macro indicators — to demonstrate both technical capability
+          and local market awareness relevant to Swiss financial employers.
         </p>
         <div class="about-tags">
-          <span class="about-tag">Analytics Engineering</span>
-          <span class="about-tag">Financial Data</span>
-          <span class="about-tag">Swiss Market</span>
-          <span class="about-tag">Data Quality</span>
-          <span class="about-tag">Pipeline Automation</span>
+          <span class="about-tag">Tableau 5+ yrs</span>
+          <span class="about-tag">dbt · BigQuery</span>
+          <span class="about-tag">Python · SQL</span>
+          <span class="about-tag">Alteryx Certified</span>
+          <span class="about-tag">Swiss Market Focus</span>
         </div>
       </div>
 
       <div class="about-card">
         <div class="about-card-title">At a Glance</div>
         <div class="about-card-item">
-          <span>Experience</span><span>5+ years</span>
+          <span>Current role</span><span>Business Data Analyst · UKG</span>
         </div>
         <div class="about-card-item">
-          <span>Core stack</span><span>dbt · BigQuery · Python</span>
+          <span>Tableau</span><span>5+ years</span>
         </div>
         <div class="about-card-item">
-          <span>Visualisation</span><span>Tableau</span>
+          <span>Stack</span><span>dbt · BigQuery · Python · SQL</span>
         </div>
         <div class="about-card-item">
-          <span>Automation</span><span>GitHub Actions</span>
+          <span>Certification</span><span>Alteryx Designer Core</span>
         </div>
         <div class="about-card-item">
-          <span>Focus area</span><span>Swiss financial data</span>
+          <span>English</span><span>C1/C2</span>
         </div>
         <div class="about-card-item">
-          <span>Languages</span><span>English · German (A2/B1)</span>
+          <span>German</span><span>A1/A2 · B1 expected Aug 2026</span>
         </div>
         <div class="about-card-item">
-          <span>Availability</span><span>Open to offers</span>
+          <span>Other languages</span><span>Bulgarian (native) · Turkish B2</span>
         </div>
       </div>
     </div>
@@ -532,13 +600,35 @@
 <!-- FOOTER -->
 <footer>
   <div class="footer-links">
-    <a href="https://www.linkedin.com/in/ibryam-fibryam" target="_blank">LinkedIn</a>
+    <a href="https://www.linkedin.com/in/ibryam" target="_blank">LinkedIn</a>
     <a href="https://github.com/ibryam" target="_blank">GitHub</a>
     <a href="https://public.tableau.com/app/profile/ibryam" target="_blank">Tableau Public</a>
     <a href="mailto:ibryamfibryam@gmail.com">ibryamfibryam@gmail.com</a>
   </div>
-  <p class="footer-copy">Built with HTML & CSS · Hosted on GitHub Pages · No tracking, no cookies</p>
+  <p class="footer-copy">Ibryam Faik · Built with HTML &amp; CSS · Hosted on GitHub Pages</p>
 </footer>
 
+<script>
+  function scaleVizzes() {
+    [['container-swiss','scaler-swiss'],['container-smi','scaler-smi']].forEach(function(pair) {
+      var container = document.getElementById(pair[0]);
+      var scaler    = document.getElementById(pair[1]);
+      if (!container || !scaler) return;
+      var scale = container.offsetWidth / 1200;
+      scaler.style.transform = 'scale(' + scale + ')';
+      container.style.height = (800 * scale) + 'px';
+    });
+  }
+
+  window.addEventListener('resize', scaleVizzes);
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var script = document.createElement('script');
+    script.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    script.onload = function() { setTimeout(scaleVizzes, 600); };
+    document.body.appendChild(script);
+    setTimeout(scaleVizzes, 300);
+  });
+</script>
 </body>
 </html>
