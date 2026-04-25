@@ -387,25 +387,11 @@
         </div>
 
         <div class="viz-container" id="container-swiss">
-          <div class="viz-scaler" id="scaler-swiss" data-w="1200" data-h="800">
-            <div class="tableauPlaceholder" style="position:relative;">
-              <noscript>
-                <a href="https://public.tableau.com/app/profile/ibryam/viz/SwissMacroMonitor/Overview">Swiss Macro Monitor</a>
-              </noscript>
-              <object class="tableauViz">
-                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-                <param name="embed_code_version" value="3" />
-                <param name="site_root" value="" />
-                <param name="name" value="SwissMacroMonitor/Overview" />
-                <param name="tabs" value="yes" />
-                <param name="toolbar" value="bottom" />
-                <param name="animate_transition" value="yes" />
-                <param name="display_static_image" value="yes" />
-                <param name="display_spinner" value="yes" />
-                <param name="display_count" value="yes" />
-                <param name="language" value="en-US" />
-              </object>
-            </div>
+          <div class="viz-scaler" id="scaler-swiss" data-w="1200" data-h="868" style="width:1200px;height:868px;">
+            <iframe src="https://public.tableau.com/views/SwissMacroMonitor/Overview?:showVizHome=no&:embed=true&:tabs=yes&:toolbar=bottom&:animate_transition=yes&:display_count=yes&:language=en-US"
+                    width="1200" height="868"
+                    frameborder="0" scrolling="no" allowfullscreen>
+            </iframe>
           </div>
         </div>
       </div>
@@ -462,25 +448,11 @@
         </div>
 
         <div class="viz-container" id="container-smi">
-          <div class="viz-scaler" id="scaler-smi" data-w="1000" data-h="800">
-            <div class="tableauPlaceholder" style="position:relative;">
-              <noscript>
-                <a href="https://public.tableau.com/app/profile/ibryam/viz/SMIRiskMonitor/Performance">SMI Risk Monitor</a>
-              </noscript>
-              <object class="tableauViz">
-                <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
-                <param name="embed_code_version" value="3" />
-                <param name="site_root" value="" />
-                <param name="name" value="SMIRiskMonitor/Performance" />
-                <param name="tabs" value="yes" />
-                <param name="toolbar" value="bottom" />
-                <param name="animate_transition" value="yes" />
-                <param name="display_static_image" value="yes" />
-                <param name="display_spinner" value="yes" />
-                <param name="display_count" value="yes" />
-                <param name="language" value="en-US" />
-              </object>
-            </div>
+          <div class="viz-scaler" id="scaler-smi" style="width:900px;height:1167px;">
+            <iframe src="https://public.tableau.com/views/SMIRiskMonitor/Performance?:showVizHome=no&:embed=true&:tabs=yes&:toolbar=bottom&:animate_transition=yes&:display_count=yes&:language=en-US"
+                    width="900" height="1167"
+                    frameborder="0" scrolling="no" allowfullscreen>
+            </iframe>
           </div>
         </div>
       </div>
@@ -606,31 +578,26 @@
 </footer>
 
 <script>
-  function scaleVizzes() {
-    document.querySelectorAll('.viz-scaler').forEach(function(scaler) {
-      var container = scaler.parentElement;
-      var w = parseInt(scaler.getAttribute('data-w'), 10);
-      var h = parseInt(scaler.getAttribute('data-h'), 10);
-      scaler.style.width  = w + 'px';
-      scaler.style.height = h + 'px';
-      var ph = scaler.querySelector('.tableauPlaceholder');
-      var vz = scaler.querySelector('.tableauViz');
-      if (ph) { ph.style.width = w + 'px'; ph.style.height = h + 'px'; }
-      if (vz) { vz.style.width = w + 'px'; vz.style.height = h + 'px'; }
-      var scale = container.offsetWidth / w;
-      scaler.style.transform = 'scale(' + scale + ')';
-      container.style.height = (h * scale) + 'px';
+  var VIZZES = [
+    { cId: 'container-swiss', sId: 'scaler-swiss', w: 1200, h: 867 },
+    { cId: 'container-smi',   sId: 'scaler-smi',   w: 900,  h: 967 }
+  ];
+
+  function scaleAll() {
+    VIZZES.forEach(function(v) {
+      var c = document.getElementById(v.cId);
+      var s = document.getElementById(v.sId);
+      if (!c || !s) return;
+      var scale = c.offsetWidth / v.w;
+      s.style.transform = 'scale(' + scale + ')';
+      c.style.height = (v.h * scale) + 'px';
     });
   }
 
-  window.addEventListener('resize', scaleVizzes);
-
+  window.addEventListener('resize', scaleAll);
   document.addEventListener('DOMContentLoaded', function() {
-    var script = document.createElement('script');
-    script.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    script.onload = function() { setTimeout(scaleVizzes, 600); };
-    document.body.appendChild(script);
-    setTimeout(scaleVizzes, 300);
+    scaleAll();
+    setTimeout(scaleAll, 800);
   });
 </script>
 </body>
