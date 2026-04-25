@@ -251,13 +251,10 @@
     }
     .viz-scaler {
       transform-origin: top left;
-      width: 1200px;
-      height: 800px;
     }
     .viz-scaler .tableauPlaceholder,
     .viz-scaler .tableauViz {
-      width: 1200px !important;
-      height: 800px !important;
+      display: block;
     }
 
     /* ── RESPONSIVE ── */
@@ -390,7 +387,7 @@
         </div>
 
         <div class="viz-container" id="container-swiss">
-          <div class="viz-scaler" id="scaler-swiss">
+          <div class="viz-scaler" id="scaler-swiss" data-w="1200" data-h="800">
             <div class="tableauPlaceholder" style="position:relative;">
               <noscript>
                 <a href="https://public.tableau.com/app/profile/ibryam/viz/SwissMacroMonitor/Overview">Swiss Macro Monitor</a>
@@ -465,7 +462,7 @@
         </div>
 
         <div class="viz-container" id="container-smi">
-          <div class="viz-scaler" id="scaler-smi">
+          <div class="viz-scaler" id="scaler-smi" data-w="1000" data-h="800">
             <div class="tableauPlaceholder" style="position:relative;">
               <noscript>
                 <a href="https://public.tableau.com/app/profile/ibryam/viz/SMIRiskMonitor/Performance">SMI Risk Monitor</a>
@@ -610,13 +607,19 @@
 
 <script>
   function scaleVizzes() {
-    [['container-swiss','scaler-swiss'],['container-smi','scaler-smi']].forEach(function(pair) {
-      var container = document.getElementById(pair[0]);
-      var scaler    = document.getElementById(pair[1]);
-      if (!container || !scaler) return;
-      var scale = container.offsetWidth / 1200;
+    document.querySelectorAll('.viz-scaler').forEach(function(scaler) {
+      var container = scaler.parentElement;
+      var w = parseInt(scaler.getAttribute('data-w'), 10);
+      var h = parseInt(scaler.getAttribute('data-h'), 10);
+      scaler.style.width  = w + 'px';
+      scaler.style.height = h + 'px';
+      var ph = scaler.querySelector('.tableauPlaceholder');
+      var vz = scaler.querySelector('.tableauViz');
+      if (ph) { ph.style.width = w + 'px'; ph.style.height = h + 'px'; }
+      if (vz) { vz.style.width = w + 'px'; vz.style.height = h + 'px'; }
+      var scale = container.offsetWidth / w;
       scaler.style.transform = 'scale(' + scale + ')';
-      container.style.height = (800 * scale) + 'px';
+      container.style.height = (h * scale) + 'px';
     });
   }
 
